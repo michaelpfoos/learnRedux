@@ -4,10 +4,10 @@ import { increment, decrement, incrementByAmount, selectCapital } from '../redux
 import { incrementDebt, decrementDebt, incrementDebtByAmount, selectDebt } from '../redux/debtSlice';
 
 const MainApp = () => {
-    const dispatch = useDispatch();
-    const capitalStateValue = useSelector(selectCapital);
-    const debtStateValue = useSelector(selectDebt);
-    const [netWorth, setNetWorth] = useState(capitalStateValue - debtStateValue);
+    const dispatch = useDispatch(); //useDispatch to dispatch actions to update the state in redux
+    const capitalStateValue = useSelector(selectCapital); //useSelector to get the state value
+    const debtStateValue = useSelector(selectDebt); //useSelector to get the state value
+    const [netWorth, setNetWorth] = useState(capitalStateValue - debtStateValue); 
 
     useEffect(() => {
         setNetWorth(capitalStateValue - debtStateValue);
